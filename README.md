@@ -12,5 +12,5 @@
 ## cc4
 [Insert-Middle-Value](/challenges-and-data-structures-code/white-borde/Insert%20Middle%20Value.md)
 
-
-
+## cc5
+[Find-Duplicates](./challenges-and-data-structures-code/white-borde/f.png)
