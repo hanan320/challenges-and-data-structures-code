@@ -13,7 +13,7 @@
 [Insert-Middle-Value](/challenges-and-data-structures-code/white-borde/Insert%20Middle%20Value.md)
 
 ## cc5
-[Find-Duplicates](/challenges-and-data-structures-code/white-borde/Find Duplicates.md)
+[Find-Duplicates](/challenges-and-data-structures-code/white-borde/Find%20Duplicates.md)
 
 ## cc6
 [Find-Duplicates](./challenges-and-data-structures-code/white-borde/commonelement.md)
