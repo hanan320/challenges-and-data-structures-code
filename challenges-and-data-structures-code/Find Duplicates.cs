@@ -1,4 +1,5 @@
-﻿using System;
+﻿using challenges_and_data_structures_code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +22,7 @@ class Program
                 duplicates.Add(i);
             }
         }
-
+        Console.Write("duplicates element: ");
         Console.WriteLine(string.Join(", ", duplicates));
     }
 
@@ -32,5 +33,14 @@ class Program
         int maxValue = arr1.Max();
 
         FindDuplicates(arr1, maxValue);
+        Console.WriteLine("\n\n");
+
+        int[] array1 = { 1, 2, 3, 0 };
+        int[] array2 = { 2, 3, 4, 9 };
+        int[] result = Class1.CommonElements(array1, array2);
+
+        Console.WriteLine("Common elements: " + string.Join(", ", result));
     }
+
+   
 }

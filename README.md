@@ -14,3 +14,6 @@
 
 ## cc5
 [Find-Duplicates](./challenges-and-data-structures-code/white-borde/f.png)
+
+## cc6
+[Find-Duplicates](./challenges-and-data-structures-code/white-borde/g.png)
