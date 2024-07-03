@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public class CommonElements {
-
-
-        public static int[] commonElements(int[] array1, int[] array2)
+﻿namespace CommonElement
+{
+    public class Program
+    {
+        public static int[]  commonElement(int[] array1, int[] array2)
         {
             int max1 = FindMaxValue(array1);
             int max2 = FindMaxValue(array2);
@@ -47,14 +42,20 @@ public class CommonElements {
             }
             return max;
         }
-        private static void PopulateFrequency(int[] freq, int[] arr)
+        public static void PopulateFrequency(int[] freq, int[] arr)
         {
             foreach (int num in arr)
             {
                 freq[num]++;
             }
         }
+        static void Main(string[] args)
+        {
+            int[] array1 = { 1, 2, 3, 0 };
+            int[] array2 = { 2, 3, 4, 9 };
+            int[] result = commonElement(array1, array2);
+
+            Console.WriteLine("Common elements: " + string.Join(", ", result));
+        }
     }
-
-    
-
+}
