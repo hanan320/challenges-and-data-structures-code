@@ -14,7 +14,7 @@ namespace TestProject1
             var arr2 = new[] { 2, 3, 4, 9 };
             var expected = new[] { 2, 3 };
             //Act
-            var actual =CommonElements.commonElements(arr1, arr2);
+            var actual = Class1.CommonElements(arr1, arr2);
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -26,7 +26,7 @@ namespace TestProject1
             var arr2 = new[] { 23, 79, 8 };
             var expected = new[] { 8,79 };
             //Act
-            var actual = CommonElements.commonElements(arr1, arr2);
+            var actual = Class1.CommonElements(arr1, arr2);
             //Assert
             Assert.Equal(expected, actual);
         }

@@ -2,10 +2,9 @@
 
 public class Class1
 {
-    public class CommonElements {
-
-
-        public static int[] commonElements(int[] array1, int[] array2)
+    
+    
+        public static int[] CommonElements(int[] array1, int[] array2)
         {
             int max1 = FindMaxValue(array1);
             int max2 = FindMaxValue(array2);
@@ -53,6 +52,4 @@ public class Class1
             }
         }
     }
-
-    }
-
+}
