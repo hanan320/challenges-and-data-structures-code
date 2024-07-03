@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Class1
-{
-    public class CommonElements {
+public class CommonElements {
 
 
         public static int[] commonElements(int[] array1, int[] array2)
@@ -54,5 +56,5 @@ public class Class1
         }
     }
 
-    }
+    
 

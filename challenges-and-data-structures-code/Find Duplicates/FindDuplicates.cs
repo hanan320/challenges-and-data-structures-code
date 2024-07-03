@@ -1,11 +1,14 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+
+
+public class FindDuplicates
 {
-    static void FindDuplicates(int[] arr, int max)
+    public static void findDuplicates(int[] arr, int max)
     {
         int[] frequency = new int[max + 1];
 
@@ -26,21 +29,4 @@ class Program
         Console.WriteLine(string.Join(", ", duplicates));
     }
 
-    static void Main()
-    {
-        int[] arr1 = { 1, 2, 3, 1, 2, 3 };
-
-        int maxValue = arr1.Max();
-
-        FindDuplicates(arr1, maxValue);
-        Console.WriteLine("\n\n");
-
-        int[] array1 = { 1, 2, 3, 0 };
-        int[] array2 = { 2, 3, 4, 9 };
-        int[] result = Class1.CommonElements(array1, array2);
-
-        Console.WriteLine("Common elements: " + string.Join(", ", result));
-    }
-
-   
 }
