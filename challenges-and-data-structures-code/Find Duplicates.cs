@@ -37,7 +37,7 @@ class Program
 
         int[] array1 = { 1, 2, 3, 0 };
         int[] array2 = { 2, 3, 4, 9 };
-        int[] result = Class1.CommonElements(array1, array2);
+        int[] result = CommonElements.commonElements(array1,array2);
 
         Console.WriteLine("Common elements: " + string.Join(", ", result));
     }
