@@ -19,4 +19,4 @@
 [Common Elenment](./challenges-and-data-structures-code/challenges-and-data-structures-code/CommonElement/CommonElement/commonelement.md)
 
 ## cc7
-[Reverse-Words](./challenges-and-data-structures-code/challenges-and-data-structures-code/Reverse%20Words/Reverse%20Words/Revers_word.md)
+[Reverse-Words](challenges-and-data-structures-code/Reverse Words/Reverse Words/Revers_word.md)
