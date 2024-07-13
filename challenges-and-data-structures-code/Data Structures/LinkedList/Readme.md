@@ -1,4 +1,4 @@
 # Linked List Implementation
 
-### Challenge I: Most Frequent Number
-![Linked List Implementation ](./i.png)
+### Challenge I: Linked List Implementation
+![Linked List Implementation ](challenges-and-data-structures-code/Data Structures/LinkedList/I.png)
