@@ -97,7 +97,7 @@ namespace LinkedList
             while (current != null)
             {
                 Console.Write(current.Data + " -> ");
-                current = current.Next; // Move to the next node
+                current = current.Next; 
             }
             Console.WriteLine("Null");
         }
