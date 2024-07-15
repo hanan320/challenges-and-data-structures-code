@@ -10,7 +10,7 @@ namespace LinkedList
 
     public class linked_list
     {
-        private Node head;
+        public Node head;
 
         public linked_list()
         {
