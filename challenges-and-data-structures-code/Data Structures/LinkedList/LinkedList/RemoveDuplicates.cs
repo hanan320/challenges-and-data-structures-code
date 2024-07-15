@@ -21,7 +21,8 @@ namespace LinkedList
                     {
                         if (runner.Next.Data == current.Data)
                         {
-                        list.Remove(runner.Next.Data);
+
+                            runner.Next = runner.Next.Next;
                         }
                         else
                         {
