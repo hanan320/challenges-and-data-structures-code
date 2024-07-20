@@ -45,6 +45,6 @@ namespace LinkedList
             mergedList.head = dummy.Next;
             return mergedList;
         }
-
+       
     }
 }

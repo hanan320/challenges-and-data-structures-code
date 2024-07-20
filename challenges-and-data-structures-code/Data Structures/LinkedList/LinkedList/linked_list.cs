@@ -90,16 +90,31 @@ namespace LinkedList
         }
 
         // Print the contents of the list in order
-        public void PrintList()
+        public string PrintList()
         {
+            //Node current = head;
+            //Console.Write("Head -> ");
+            //while (current != null)
+            //{
+            //    Console.Write(current.Data + " -> ");
+            //    current = current.Next; 
+            //}
+            //Console.WriteLine("Null \n");
             Node current = head;
-            Console.Write("Head -> ");
+            if (current == null)
+            {
+                return "Null";
+            }
+
+            string result = "";
             while (current != null)
             {
-                Console.Write(current.Data + " -> ");
-                current = current.Next; 
+                result += current.Data + " -> ";
+                current = current.Next;
             }
-            Console.WriteLine("Null \n");
+            result += "Null";
+           
+            return result;
         }
 
 
