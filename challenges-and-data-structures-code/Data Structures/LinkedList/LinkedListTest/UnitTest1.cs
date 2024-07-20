@@ -33,17 +33,14 @@ namespace LinkedListTest
             list.Add(10);
             list.Add(20);
             list.Add(30);
-
-            // Redirect console output to a string
-            var consoleOutput = new System.IO.StringWriter();
-            Console.SetOut(consoleOutput);
+            
 
             // Act
-            list.PrintList();
+            string result=list.PrintList();
 
             // Assert
-            string expectedOutput = "Head -> 5 -> 10 -> 20 -> 30 -> Null" + Environment.NewLine;
-            Assert.Equal(expectedOutput, consoleOutput.ToString());
+         
+            Assert.Equal("5 -> 10 -> 20 -> 30 -> Null", result);
         }
     
         [Fact]
@@ -56,8 +53,8 @@ namespace LinkedListTest
 
             RemoveDuplicates.Remove_Duplicates(list);
 
-            string expectedOutput = "Head -> 1 -> 2 -> 3 -> Null";
-            Assert.Equal(expectedOutput, GetListAsString(list));
+            string result = list.PrintList();
+            Assert.Equal("1 -> 2 -> 3 -> Null", result);
         }
 
         [Fact]
@@ -72,8 +69,8 @@ namespace LinkedListTest
 
             RemoveDuplicates.Remove_Duplicates(list);
 
-            string expectedOutput = "Head -> 1 -> 2 -> 3 -> Null";
-            Assert.Equal(expectedOutput, GetListAsString(list));
+            string result = list.PrintList();
+            Assert.Equal("1 -> 2 -> 3 -> Null", result);
         }
 
         [Fact]
@@ -87,20 +84,27 @@ namespace LinkedListTest
 
             RemoveDuplicates.Remove_Duplicates(list);
 
-            string expectedOutput = "Head -> 7 -> Null";
-            Assert.Equal(expectedOutput, GetListAsString(list));
+            string result = list.PrintList();
+            Assert.Equal("7 -> Null", result);
         }
 
-        private string GetListAsString(linked_list list)
+        [Fact]
+        public void Merge_WhenOneListIsEmpty_ShouldReturnNonEmptyList()
         {
-            using (var sw = new StringWriter())
-            {
-                Console.SetOut(sw);
-                list.PrintList();
-                return sw.ToString().Trim();
-            }
-        }
- 
+            // Arrange
+            linked_list list1 = new linked_list();
+            linked_list list2 = new linked_list();
+            list2.Add(1);
+            list2.Add(2);
+            list2.Add(3);
 
-}
+            // Act
+            linked_list mergedList = Merge_Sorted_Lists.MergeSortedLists(list1, list2);
+           
+            // Assert
+            Assert.Equal("1 -> 2 -> 3 -> Null", mergedList.PrintList() );
+        }
+
+
+    }
 }
