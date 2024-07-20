@@ -21,5 +21,5 @@
 ## cc7
 [Reverse-Words](challenges-and-data-structures-code/Reverse%20Words/Reverse%20Words/Revers_word.md)
 
-## cc8 && cc9
+## cc8 && cc9 && CC10
 [Linked List Implementation && Remove_Duplicates](challenges-and-data-structures-code/Data%20Structures/LinkedList/Readme.md)
