@@ -99,7 +99,7 @@ namespace LinkedList
                 Console.Write(current.Data + " -> ");
                 current = current.Next; 
             }
-            Console.WriteLine("Null");
+            Console.WriteLine("Null \n");
         }
 
 
