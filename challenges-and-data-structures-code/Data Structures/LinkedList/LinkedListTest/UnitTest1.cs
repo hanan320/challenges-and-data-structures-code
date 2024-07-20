@@ -104,6 +104,39 @@ namespace LinkedListTest
             // Assert
             Assert.Equal("1 -> 2 -> 3 -> Null", mergedList.PrintList() );
         }
+        [Fact]
+        public void Merge_WhenBothListsAreEmpty_ShouldReturnEmptyList()
+        {
+            // Arrange
+            linked_list list1 = new linked_list();
+            linked_list list2 = new linked_list();
+
+            // Act
+            linked_list mergedList = Merge_Sorted_Lists.MergeSortedLists(list1, list2);
+
+            // Assert
+            Assert.Equal("Null", mergedList.PrintList());
+        }
+        [Fact]
+        public void Merge_WhenListsAreNonEmpty_ShouldReturnMergedSortedList()
+        {
+            // Arrange
+            linked_list list1 = new linked_list();
+            list1.Add(5);
+            list1.Add(10);
+            list1.Add(15);
+
+            linked_list list2 = new linked_list();
+            list2.Add(2);
+            list2.Add(3);
+            list2.Add(20);
+
+            // Act
+            linked_list mergedList = Merge_Sorted_Lists.MergeSortedLists(list1, list2);
+
+            // Assert
+            Assert.Equal("2 -> 3 -> 5 -> 10 -> 15 -> 20 -> Null", mergedList.PrintList());
+        }
 
 
     }
