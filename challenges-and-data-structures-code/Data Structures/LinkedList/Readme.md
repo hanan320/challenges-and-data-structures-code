@@ -8,4 +8,4 @@
 ![Linked List Remove_Duplicates ](././j.png)
 
 ## Challenge K: Linked List Merge Sorted Lists
-![Linked List Merge Sorted Lists ](././K.png)
+![Linked List Merge Sorted Lists ](././k.png)
