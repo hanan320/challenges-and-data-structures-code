@@ -10,51 +10,29 @@ namespace Stack_Queue
     {
         private Node top;
         public int counter = 0;
-
         public Stack_ex()
-        {
-            top = null;
-        }
-
+        {top = null;}
         public void Push(int data)
-        {
-            Node newNode = new Node(data);
+        {Node newNode = new Node(data);
             newNode.Next = top;
             top = newNode;
-            counter++;
-        }
+            counter++;}
 
         public int Pop()
-        {
-            if (IsEmpty())
-            {
-                throw new InvalidOperationException("Stack is empty.");
-            }
+        {if (IsEmpty()){
+         throw new InvalidOperationException("Stack is empty."); }
             int data = top.Data;
             top = top.Next;
             counter--;
-            return data;
-        }
-
+            return data;}
         public int Peek()
-        {
-            if (IsEmpty())
-            {
-                throw new InvalidOperationException("Stack is empty.");
-            }
-            return top.Data;
-        }
-
+        {if (IsEmpty()){
+         throw new InvalidOperationException("Stack is empty.");}
+            return top.Data;}
         public bool IsEmpty()
-        {
-            return top == null;
-        }
-
+        {return top == null;}
         public int countIndexes()
-        {
-            return counter;
-        }
-
+        {return counter; }
         public void PrintStack()
         {
             Node current = top;
