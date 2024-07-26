@@ -24,5 +24,5 @@
 ## cc8 && cc9 && cc10
 [Linked List Implementation && Remove_Duplicates && Merge Sorted Lists](challenges-and-data-structures-code/Data%20Structures/LinkedList/Readme.md)
 
-## cc11
+## cc11 
 [stack and queue](challenges-and-data-structures-code/Data%20Structures/Stack&Queue/stackAndQueue.md)
