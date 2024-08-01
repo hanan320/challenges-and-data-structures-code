@@ -42,6 +42,20 @@
 
             bool isQueueEmpty = queue.IsEmpty(); // isEmpty: false
             Console.WriteLine($"Is queue empty? {isQueueEmpty}");
+
+            Console.WriteLine("\n\n");
+            Stack_ex stack1 = new Stack_ex();
+            stack1.Push(10);
+            stack1.Push(5);
+            stack1.Push(15);
+            stack1.Push(20);
+            Console.WriteLine("before reverse");
+            stack1.PrintStack();
+
+            stack1.ReverseStack();
+            Console.WriteLine("after reverse");
+            stack1.PrintStack();
+
         }
     }
 }

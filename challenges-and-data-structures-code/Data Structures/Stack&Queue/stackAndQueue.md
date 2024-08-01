@@ -1,4 +1,7 @@
 ### Whiteboard Images
 
-### Challenge 06-A: stack & qeueu 
+### stack & qeueu 
 ![stack & qeueu ](././l.png)
+
+### stack & qeueu reverse
+![stack & qeueu ](././m.png)
