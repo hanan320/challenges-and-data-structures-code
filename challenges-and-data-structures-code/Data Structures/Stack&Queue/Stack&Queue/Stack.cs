@@ -11,28 +11,38 @@ namespace Stack_Queue
         private Node top;
         public int counter = 0;
         public Stack_ex()
-        {top = null;}
+        { top = null; }
         public void Push(int data)
-        {Node newNode = new Node(data);
+        {
+            Node newNode = new Node(data);
             newNode.Next = top;
             top = newNode;
-            counter++;}
+            counter++;
+        }
 
         public int Pop()
-        {if (IsEmpty()){
-         throw new InvalidOperationException("Stack is empty."); }
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("Stack is empty.");
+            }
             int data = top.Data;
             top = top.Next;
             counter--;
-            return data;}
+            return data;
+        }
         public int Peek()
-        {if (IsEmpty()){
-         throw new InvalidOperationException("Stack is empty.");}
-            return top.Data;}
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("Stack is empty.");
+            }
+            return top.Data;
+        }
         public bool IsEmpty()
-        {return top == null;}
+        { return top == null; }
         public int countIndexes()
-        {return counter; }
+        { return counter; }
         public void PrintStack()
         {
             Node current = top;
@@ -42,6 +52,22 @@ namespace Stack_Queue
                 current = current.Next;
             }
             Console.WriteLine();
+        }
+        public void ReverseStack()
+        {
+            Queue_ex queue = new Queue_ex();
+
+
+            while (!IsEmpty())
+            {
+                var item = Pop();
+                queue.Enqueue(item);
+            }
+            while (queue.counter > 0)
+            {
+                var item = queue.Dequeue();
+                Push(item);
+            }
         }
     }
 }
