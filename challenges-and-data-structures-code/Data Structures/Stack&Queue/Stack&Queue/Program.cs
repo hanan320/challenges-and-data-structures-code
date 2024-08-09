@@ -56,6 +56,32 @@
             Console.WriteLine("after reverse");
             stack1.PrintStack();
 
+            Stack_ex stack2 = new Stack_ex();
+            stack2.Push(7);
+            stack2.Push(14);
+            stack2.Push(3);
+            stack2.Push(8);
+            stack2.Push(5);
+            Console.WriteLine("\ndelete middle element:");
+            Console.WriteLine("before delete");
+            stack2.PrintStack();
+
+            stack2.DeleteMiddle();
+            Console.WriteLine("after delete");
+            stack2.PrintStack();
+
+           
+
+            stack2.Push(2);
+            stack2.Push(9);
+            stack2.Push(11);
+
+            Console.WriteLine("before reverse");
+            stack2.PrintStack();
+
+            stack2.DeleteMiddle();
+            Console.WriteLine("after reverse");
+            stack2.PrintStack();
         }
     }
 }

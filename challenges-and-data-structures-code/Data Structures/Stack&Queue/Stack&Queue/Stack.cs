@@ -69,5 +69,31 @@ namespace Stack_Queue
                 Push(item);
             }
         }
+        public void DeleteMiddle()
+        {
+            if (counter == 0)
+            {
+                Console.WriteLine("Stack is empty. No element to delete.");
+                return;
+            }
+
+            int middleIndex = (counter - 1) / 2;
+            Stack_ex tempStack = new Stack_ex();
+
+            for (int i = 0; i < middleIndex; i++)
+            {
+                tempStack.Push(this.Pop());
+            }
+
+            if (!IsEmpty())
+            {
+                this.Pop();
+            }
+
+            while (tempStack.counter > 0)
+            {
+                this.Push(tempStack.Pop());
+            }
+        }
     }
 }
