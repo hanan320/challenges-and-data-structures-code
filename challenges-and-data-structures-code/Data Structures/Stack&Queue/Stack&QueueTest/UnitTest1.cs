@@ -140,5 +140,70 @@ namespace Stack_QueueTest
             Assert.Equal(1, stack.Pop()); // 1
             Assert.True(stack.IsEmpty());
         }
+
+        [Fact]
+        public void GetMin_ShouldReturnMinimumElement()
+        {
+            // Arrange
+            MinStack stack = new MinStack();
+            stack.Push(5);
+            stack.Push(1);
+            stack.Push(8);
+            stack.Push(3);
+
+            // Act
+            int min = stack.GetMin();
+
+            // Assert
+            Assert.Equal(1, min);
+        }
+
+        [Fact]
+        public void GetMin_AfterPoppingElements_ShouldReturnNewMinimum()
+        {
+            // Arrange
+            MinStack stack = new MinStack();
+            stack.Push(5);
+            stack.Push(1);
+            stack.Push(8);
+            stack.Push(3);
+
+            // Act
+            stack.Pop(); // Removes 3
+            stack.Pop(); // Removes 8
+            int minAfterPop = stack.GetMin();
+
+            // Assert
+            Assert.Equal(1, minAfterPop);
+
+            // Act
+            stack.Pop(); // Removes 1
+            
+
+            // Assert
+            Assert.Equal(5, stack.GetMin());
+        }
+
+        [Fact]
+        public void GetMin_AfterPushingElements_ShouldReturnUpdatedMinimum()
+        {
+            // Arrange
+            MinStack stack = new MinStack();
+            stack.Push(5);
+            stack.Push(1);
+            stack.Push(8);
+
+            // Act
+            stack.Push(0); // New minimum is 0
+
+            // Assert
+            Assert.Equal(0, stack.GetMin());
+
+            // Act
+            stack.Push(-1); // New minimum is -1
+
+            // Assert
+            Assert.Equal(-1, stack.GetMin());
+        }
     }
 }

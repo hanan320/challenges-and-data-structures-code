@@ -25,4 +25,4 @@
 [Linked List Implementation && Remove_Duplicates && Merge Sorted Lists](challenges-and-data-structures-code/Data%20Structures/LinkedList/Readme.md)
 
 ## cc11 
-[stack and queue && reverse && delete middle](challenges-and-data-structures-code/Data%20Structures/Stack&Queue/stackAndQueue.md)
+[stack and queue && reverse && delete middle && get minimum ](challenges-and-data-structures-code/Data%20Structures/Stack&Queue/stackAndQueue.md)

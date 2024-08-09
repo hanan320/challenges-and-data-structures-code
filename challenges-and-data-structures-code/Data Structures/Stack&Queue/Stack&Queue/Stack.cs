@@ -11,11 +11,14 @@ namespace Stack_Queue
         private Node top;
         public int counter = 0;
         public Stack_ex()
-        { top = null; }
+        { 
+            top = null; 
+        }
         public void Push(int data)
         {
             Node newNode = new Node(data);
             newNode.Next = top;
+
             top = newNode;
             counter++;
         }
@@ -26,11 +29,18 @@ namespace Stack_Queue
             {
                 throw new InvalidOperationException("Stack is empty.");
             }
+
             int data = top.Data;
             top = top.Next;
             counter--;
             return data;
         }
+
+        public int Top_count()
+        {
+            return counter;
+        }
+
         public int Peek()
         {
             if (IsEmpty())
@@ -40,9 +50,10 @@ namespace Stack_Queue
             return top.Data;
         }
         public bool IsEmpty()
-        { return top == null; }
-        public int countIndexes()
-        { return counter; }
+        { 
+            return top == null; 
+        }
+       
         public void PrintStack()
         {
             Node current = top;
@@ -71,13 +82,13 @@ namespace Stack_Queue
         }
         public void DeleteMiddle()
         {
-            if (counter == 0)
+            if (Top_count() == 0)
             {
                 Console.WriteLine("Stack is empty. No element to delete.");
                 return;
             }
 
-            int middleIndex = (counter - 1) / 2;
+            int middleIndex = (Top_count() - 1) / 2;
             Stack_ex tempStack = new Stack_ex();
 
             for (int i = 0; i < middleIndex; i++)
@@ -90,7 +101,7 @@ namespace Stack_Queue
                 this.Pop();
             }
 
-            while (tempStack.counter > 0)
+            while (tempStack.Top_count() > 0)
             {
                 this.Push(tempStack.Pop());
             }
