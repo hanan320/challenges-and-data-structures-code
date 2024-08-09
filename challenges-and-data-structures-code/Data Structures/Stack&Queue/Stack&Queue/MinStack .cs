@@ -18,28 +18,32 @@ namespace Stack_Queue
 
         public int GetMin()
         {
-            if (minStack.IsEmpty())
+            if (IsEmpty())
             {
                 throw new InvalidOperationException("Stack is empty.");
             }
 
-            int min =minStack.Peek();
+            int min = int.MaxValue; // Initialize to a very large value
+            Stack_ex tempStack = new Stack_ex();
 
-            while (!minStack.IsEmpty())
+            // Traverse the stack to find the minimum value
+            while (!IsEmpty())
             {
-
-                minStack.Push(minStack.Pop());
-                if (minStack.Peek() < min)
-                    min = minStack.Peek();
+                int current = Pop();
+                if (current < min)
+                {
+                    min = current;
+                }
+                tempStack.Push(current); // Push to a temporary stack to restore the original stack
             }
 
-            while (!minStack.IsEmpty())
+            // Restore the original stack
+            while (!tempStack.IsEmpty())
             {
-                minStack.Push(minStack.Pop());
+                Push(tempStack.Pop());
             }
 
             return min;
-
         }
     }
 }

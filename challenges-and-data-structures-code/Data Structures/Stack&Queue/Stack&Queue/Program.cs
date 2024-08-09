@@ -1,9 +1,10 @@
-﻿namespace Stack_Queue
+﻿using System;
+namespace Stack_Queue
 {
     public class Program
     {
         static void Main(string[] args)
-        {/*
+        {
             Console.Write("stack:");
             Stack_ex stack = new Stack_ex();
             stack.Push(10); // Stack: Top -> 10
@@ -82,50 +83,48 @@
             stack2.DeleteMiddle();
             Console.WriteLine("after delete");
             stack2.PrintStack();
-            */
+
+
             MinStack minStack = new MinStack();
 
-            // Push elements
-            minStack.Push(15); // Top -> 15 (min: 15)
-            minStack.Push(7);  // Top -> 7 -> 15 (min: 7) 
-            minStack.Push(12); // Top -> 12 -> 7 -> 15 (min: 7)
-            minStack.Push(3);  // Top -> 3 -> 12 -> 7 -> 15 (min: 3) 
+            // Push elements onto the stack
+            minStack.Push(15); // Stack: 15 (min: 15)
+            minStack.Push(7);  // Stack: 7 -> 15 (min: 7)
+            minStack.Push(12); // Stack: 12 -> 7 -> 15 (min: 7)
+            minStack.Push(3);  // Stack: 3 -> 12 -> 7 -> 15 (min: 3)
 
-            // Print the stack
-            Console.Write("\nPrint the stack:");
-            minStack.PrintStack(); // Output: Top -> 3 -> 12 -> 7 -> 15
+            // Print the current stack
+            Console.WriteLine("\nPrint the stack:");
+            minStack.PrintStack(); // Expected Output: Top -> 3 -> 12 -> 7 -> 15
 
-            // Get the minimum element
-            Console.Write("\nGet the minimum element:");
-            int min = minStack.GetMin(); // min: 3
+            // Get and display the minimum element
+            Console.WriteLine($"\nGet the minimum element: {minStack.GetMin()}"); // Expected min: 3
 
             // Pop a node from the stack
-            Console.Write("\nPop a node from the stack:");
-            int pop = minStack.Pop(); // popped: 3
-            Console.Write($"\nthe popped elemint is= {pop}");
-            minStack.PrintStack(); // Output: Top -> 12 -> 7 -> 15
+            Console.WriteLine("\nPop a node from the stack:");
+            int poppedValue = minStack.Pop(); // Popped: 3
+            Console.WriteLine($"The popped element is: {poppedValue}");
+            minStack.PrintStack(); // Expected Output: Top -> 12 -> 7 -> 15
 
-            // Get the new minimum element
-            Console.Write("\nGet the new minimum element");
-            min = minStack.GetMin(); // min: 7
+            // Get and display the new minimum element
+            Console.WriteLine($"\nGet the new minimum element: {minStack.GetMin()}"); // Expected min: 7
 
-            // Peek the top node
-            Console.Write("\nPeek the top node");
-            int peeked = minStack.Top(); // peeked: 12
+            // Peek the top node of the stack
+            Console.WriteLine($"\nPeek the top node: {minStack.Peek()}"); // Display the top element
 
-            // Push another element
-            Console.Write("\nPush another element:");
-            minStack.Push(2);  // Top -> 2 -> 12 -> 7 -> 15 (min: 2)
-            minStack.PrintStack(); // Output: Top -> 2 -> 12 -> 7 -> 15
+            // Push another element onto the stack
+            Console.WriteLine("\nPush another element:");
+            minStack.Push(2);  // Stack: 2 -> 12 -> 7 -> 15 (min: 2)
+            minStack.PrintStack(); // Expected Output: Top -> 2 -> 12 -> 7 -> 15
 
-            // Get the new minimum element
-            Console.Write("\nGet the new minimum element:");
-            min = minStack.GetMin(); // min: 2
+            // Get and display the new minimum element
+            Console.WriteLine($"\nGet the new minimum element: {minStack.GetMin()}"); // Expected min: 2
 
-            // Check if the stack is empty
-            Console.Write("\nCheck if the stack is empty:");
+            // Check and display if the stack is empty
+            Console.WriteLine("\nCheck if the stack is empty:");
             bool isEmpty = minStack.IsEmpty(); // isEmpty: false
-            Console.Write($"is the stack empty {isEmpty}");
+            Console.WriteLine($"Is the stack empty: {isEmpty}");
+        
 
         }
     }

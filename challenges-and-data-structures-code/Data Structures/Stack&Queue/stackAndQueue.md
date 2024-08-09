@@ -8,3 +8,6 @@
 
 ### stack & qeueu delete middle
 ![stack & qeueu ](././n.png)
+
+### stack & qeueu get minimum
+![stack & qeueu ](././o.png)
