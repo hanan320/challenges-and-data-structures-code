@@ -11,7 +11,9 @@ namespace Stack_Queue
         private Node top;
         public int counter = 0;
         public Stack_ex()
-        { top = null; }
+        { 
+            top = null; 
+        }
         public void Push(int data)
         {
             Node newNode = new Node(data);
