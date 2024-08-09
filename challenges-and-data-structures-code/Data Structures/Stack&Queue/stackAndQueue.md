@@ -5,3 +5,6 @@
 
 ### stack & qeueu reverse
 ![stack & qeueu ](././m.png)
+
+### stack & qeueu delete middle
+![stack & qeueu ](././n.png)

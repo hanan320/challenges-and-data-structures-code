@@ -95,5 +95,50 @@ namespace Stack_QueueTest
 
             Assert.True(stack.IsEmpty());
         }
+
+        [Fact]
+        public void DeleteMiddle_RemovesMiddleElementFromOddSizedStack()
+        {
+            // Arrange
+            Stack_ex stack = new Stack_ex();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5); // Stack: Top -> 5 -> 4 -> 3 -> 2 -> 1
+
+            // Act
+            stack.DeleteMiddle();
+
+            // Assert
+            Assert.Equal(5, stack.Pop()); // 5
+            Assert.Equal(4, stack.Pop()); // 3 (Middle element removed)
+            Assert.Equal(2, stack.Pop()); // 2
+            Assert.Equal(1, stack.Pop()); // 1
+            Assert.True(stack.IsEmpty());
+        }
+        [Fact]
+        public void DeleteMiddle_RemovesLowerMiddleElementFromEvenSizedStack()
+        {
+            // Arrange
+            Stack_ex stack = new Stack_ex();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Push(6); // Stack: Top -> 6 -> 5 -> 4 -> 3 -> 2 -> 1
+
+            // Act
+            stack.DeleteMiddle();
+
+            // Assert
+            Assert.Equal(6, stack.Pop()); // 6
+            Assert.Equal(5, stack.Pop()); // 5
+            Assert.Equal(3, stack.Pop()); // 4 
+            Assert.Equal(2, stack.Pop()); // 2
+            Assert.Equal(1, stack.Pop()); // 1
+            Assert.True(stack.IsEmpty());
+        }
     }
 }
