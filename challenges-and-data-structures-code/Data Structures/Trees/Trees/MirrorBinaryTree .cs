@@ -17,6 +17,7 @@ namespace Trees
             if (node == null)
                 return;
 
+
             Mirror(node.Left);
             Mirror(node.Right);
 
@@ -26,3 +27,6 @@ namespace Trees
         }
     }
 }
+
+
+
