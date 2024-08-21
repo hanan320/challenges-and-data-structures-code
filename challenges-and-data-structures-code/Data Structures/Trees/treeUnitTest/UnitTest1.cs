@@ -118,5 +118,54 @@ namespace treeUnitTest
             Assert.True(bst.Contains(15));
             Assert.True(bst.Contains(7));
         }
+        [Fact]
+        public void Test_MirrorBinaryTree_TransformsCorrectly()
+        {
+            // Arrange
+            MirrorBinaryTree tree = new MirrorBinaryTree();
+            tree.Root = new Node(4);
+            tree.Root.Left = new Node(8);
+            tree.Root.Right = new Node(7);
+            tree.Root.Left.Left = new Node(12);
+            tree.Root.Left.Right = new Node(9);
+
+            // Act
+            tree.Mirror();
+
+            // Assert
+            Assert.Equal(7, tree.Root.Left.Data);          
+            Assert.Equal(8, tree.Root.Right.Data);          
+            Assert.Equal(9, tree.Root.Right.Left.Data);   
+            Assert.Equal(12, tree.Root.Right.Right.Data);   
+        }
+
+        [Fact]
+        public void Test_MirrorBinaryTree_SingleNode()
+        {
+            // Arrange
+            MirrorBinaryTree tree = new MirrorBinaryTree();
+            tree.Root = new Node(1);
+
+            // Act
+            tree.Mirror();
+
+            // Assert
+            Assert.Equal(1, tree.Root.Data);   
+            Assert.Null(tree.Root.Left);       
+            Assert.Null(tree.Root.Right);      
+        }
+
+        [Fact]
+        public void Test_MirrorBinaryTree_EmptyTree()
+        {
+            // Arrange
+            MirrorBinaryTree tree = new MirrorBinaryTree();
+
+            // Act
+            tree.Mirror();
+
+            // Assert
+            Assert.Null(tree.Root);  
+        }
     }
 }
