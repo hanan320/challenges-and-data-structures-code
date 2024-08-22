@@ -167,5 +167,73 @@ namespace treeUnitTest
             // Assert
             Assert.Null(tree.Root);  
         }
+        [Fact]
+        public void FindSecondMax_ReturnsCorrectValue_WithMultipleNodes()
+        {
+            // Arrange
+            BinaryTreeWithSecondMax Btree = new BinaryTreeWithSecondMax();
+            Btree.Root = new Node(10);
+            Btree.Root.Left = new Node(5);
+            Btree.Root.Right = new Node(20);
+            Btree.Root.Left.Left = new Node(3);
+            Btree.Root.Left.Right = new Node(7);
+            Btree.Root.Right.Left = new Node(15);
+            Btree.Root.Right.Right = new Node(25);
+
+            // Act
+            int secondMax = Btree.FindSecondMax();
+
+            // Assert
+            Assert.Equal(20, secondMax);
+        }
+
+        [Fact]
+        public void FindSecondMax_ThrowsException_WhenTreeIsEmpty()
+        {
+            // Arrange
+            BinaryTreeWithSecondMax Btree = new BinaryTreeWithSecondMax();
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => Btree.FindSecondMax());
+        }
+
+        [Fact]
+        public void FindSecondMax_ThrowsException_WhenTreeHasOnlyOneNode()
+        {
+            // Arrange
+            BinaryTreeWithSecondMax Btree = new BinaryTreeWithSecondMax();
+            Btree.Root = new Node(10);
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => Btree.FindSecondMax());
+        }
+
+        [Fact]
+        public void FindSecondMax_ThrowsException_WhenTreeHasLessThanTwoUniqueValues()
+        {
+            // Arrange
+            BinaryTreeWithSecondMax Btree = new BinaryTreeWithSecondMax();
+            Btree.Root = new Node(10);
+            Btree.Root.Left = new Node(10);
+            Btree.Root.Right = new Node(10);
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => Btree.FindSecondMax());
+        }
+        [Fact]
+        public void FindSecondMax_ReturnsCorrectValue_WithNegativeValues()
+        {
+            // Arrange
+            BinaryTreeWithSecondMax Btree = new BinaryTreeWithSecondMax();
+            Btree.Root = new Node(-10);
+            Btree.Root.Left = new Node(-20);
+            Btree.Root.Right = new Node(-5);
+
+            // Act
+            int secondMax = Btree.FindSecondMax();
+
+            // Assert
+            Assert.Equal(-10, secondMax);
+        }
     }
 }
