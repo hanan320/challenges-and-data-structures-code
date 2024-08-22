@@ -235,5 +235,73 @@ namespace treeUnitTest
             // Assert
             Assert.Equal(-10, secondMax);
         }
+        [Fact]
+        public void LeafSum_WithPositiveValues_ReturnsCorrectSum()
+        {
+            // Arrange
+            EnhancedBinaryTree Btree = new EnhancedBinaryTree();
+            Btree.Root = new Node(9);
+            Btree.Root.Left = new Node(8);
+            Btree.Root.Right = new Node(12);
+            Btree.Root.Left.Left = new Node(3);
+            Btree.Root.Left.Right = new Node(7);
+            Btree.Root.Right.Left = new Node(17);
+            Btree.Root.Right.Right = new Node(23);
+            Btree.Root.Left.Left.Right = new Node(4);
+
+            // Act
+            int result = Btree.LeafSum();
+
+            // Assert
+            Assert.Equal(51, result); // Expected leaf sum is 4 + 7 + 17 + 23 = 51
+        }
+
+        [Fact]
+        public void LeafSum_WithNegativeValues_ReturnsCorrectSum()
+        {
+            // Arrange
+            EnhancedBinaryTree Btree = new EnhancedBinaryTree();
+            Btree.Root = new Node(-1);
+            Btree.Root.Left = new Node(-2);
+            Btree.Root.Right = new Node(-3);
+            Btree.Root.Left.Left = new Node(-4);
+            Btree.Root.Left.Right = new Node(-5);
+            Btree.Root.Right.Left = new Node(-6);
+            Btree.Root.Right.Right = new Node(-7);
+            Btree.Root.Left.Left.Right = new Node(-8);
+
+            // Act
+            int result = Btree.LeafSum();
+
+            // Assert
+            Assert.Equal(-26, result); // Expected leaf sum is -8 + -5 + -6 + -7 = -26
+        }
+
+        [Fact]
+        public void LeafSum_EmptyTree_ReturnsZero()
+        {
+            // Arrange
+            EnhancedBinaryTree Btree = new EnhancedBinaryTree();
+
+            // Act
+            int result = Btree.LeafSum();
+
+            // Assert
+            Assert.Equal(0, result); // An empty tree should return 0 for the sum
+        }
+
+        [Fact]
+        public void LeafSum_SingleNodeTree_ReturnsNodeValue()
+        {
+            // Arrange
+            EnhancedBinaryTree Btree = new EnhancedBinaryTree();
+            Btree.Root = new Node(10);
+
+            // Act
+            int result = Btree.LeafSum();
+
+            // Assert
+            Assert.Equal(10, result); // A tree with a single node should return that node's value
+        }
     }
 }
