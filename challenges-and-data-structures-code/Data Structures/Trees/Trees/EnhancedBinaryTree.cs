@@ -9,11 +9,8 @@ namespace Trees
     public class EnhancedBinaryTree:BinaryTree
     {
         public int LeafSum()
-        {
-            return LeafSumHelper(Root);
-        }
+        { return LeafSumHelper(Root);  }
 
-        
         private int LeafSumHelper(Node node)
         {
             if (node == null)
