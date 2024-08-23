@@ -6,6 +6,8 @@
 ### Challenge 13: trees Mirror
 ![trees](./q.png)
 
-### Challenge 13: trees Find Second Max
+### Challenge 14: trees Find Second Max
 ![trees](./r.png)
 
+### Challenge 15: trees Enhanced Binary Tree
+![trees](./s.png)
