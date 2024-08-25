@@ -8,7 +8,7 @@ namespace Trees
 {
     public class AdvancedBinaryTree:BinaryTree
     {
-        public List<int> LargestLevelValue()
+        public List<int> LargestLevelValue() 
         { 
             List<int> largestValues = new List<int>();
 
@@ -31,7 +31,7 @@ namespace Trees
                         max = currentNode.Data;
                     }
                     if (currentNode.Left != null)
-                    {
+                    { 
                         queue.Enqueue(currentNode.Left);
                     }
                     if (currentNode.Right != null)
