@@ -9,22 +9,36 @@ namespace Trees
     public class AdvancedBinaryTree:BinaryTree
     {
         public List<int> LargestLevelValue()
-        {
+        { 
             List<int> largestValues = new List<int>();
-            if (Root == null) return largestValues;
+
+            if (Root == null)
+                return largestValues;
+
             Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(Root);
+
             while (queue.Count > 0)
-            {   int levelSize = queue.Count;
+            {   
+                int levelSize = queue.Count;
                 int max = int.MinValue;
+
                 for (int i = 0; i < levelSize; i++)
-                {Node currentNode = queue.Dequeue();
+                {
+                    Node currentNode = queue.Dequeue();
                     if (currentNode.Data > max)
-                    {max = currentNode.Data; }
+                    {
+                        max = currentNode.Data;
+                    }
                     if (currentNode.Left != null)
-                    {queue.Enqueue(currentNode.Left); }
+                    {
+                        queue.Enqueue(currentNode.Left);
+                    }
                     if (currentNode.Right != null)
-                    { queue.Enqueue(currentNode.Right); }
+                    {
+                        queue.Enqueue(currentNode.Right);
+
+                    }
                 }
                 largestValues.Add(max);
             }
