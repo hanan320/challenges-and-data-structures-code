@@ -303,5 +303,29 @@ namespace treeUnitTest
             // Assert
             Assert.Equal(10, result); // A tree with a single node should return that node's value
         }
+        [Fact]
+        public void TestLargestLevelValueSum()
+        {
+            // Arrange
+            AdvancedBinaryTree Btree = new AdvancedBinaryTree();
+            Btree.Root = new Node(5);
+            Btree.Root.Left = new Node(13);
+            Btree.Root.Right = new Node(7);
+            Btree.Root.Left.Left = new Node(3);
+            Btree.Root.Left.Right = new Node(7);
+            Btree.Root.Right.Left = new Node(12);
+            Btree.Root.Right.Right = new Node(20);
+            Btree.Root.Left.Left.Left = new Node(1);
+            Btree.Root.Left.Left.Right = new Node(4);
+            Btree.Root.Right.Left.Right = new Node(11);
+
+            // Act
+            List<int> largestValues = Btree.LargestLevelValue();
+
+            // Assert
+            List<int> expectedValues = new List<int> { 5, 13, 20, 11 };
+            Assert.Equal(expectedValues, largestValues);
+            Assert.Equal(expectedValues.Sum(), largestValues.Sum());  // Verify the sum is correct
+        }
     }
 }
