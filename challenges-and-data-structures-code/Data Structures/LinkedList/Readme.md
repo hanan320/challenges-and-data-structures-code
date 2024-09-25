@@ -9,3 +9,6 @@
 
 ## Challenge K: Linked List Merge Sorted Lists
 ![Linked List Merge Sorted Lists ](././k.png)
+
+## Challenge u: Linked List Linked List Rotator
+![Linked List Linked List Rotator ](././u.png)
