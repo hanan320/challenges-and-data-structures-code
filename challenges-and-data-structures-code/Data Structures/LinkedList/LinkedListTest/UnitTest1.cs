@@ -137,7 +137,50 @@ namespace LinkedListTest
             // Assert
             Assert.Equal("2 -> 3 -> 5 -> 10 -> 15 -> 20 -> Null", mergedList.PrintList());
         }
+        [Fact]
+        public void RotateLeft_ByZero_ListRemainsUnchanged()
+        {
+            // Arrange
+            linked_list list = new linked_list();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
 
+            LinkedListRotator rotator = new LinkedListRotator(list);
+            string expected = "1 -> 2 -> 3 -> 4 -> 5 -> Null";
+
+            // Act
+            rotator.RotateLeft(0); // Rotate by 0
+            string actual = list.PrintList();
+
+            // Assert
+            Assert.Equal(expected, actual); // The list should remain unchanged
+        }
+
+      
+        [Fact]
+        public void RotateLeft_ByGreaterThanLength_ListIsRotatedCorrectly()
+        {
+            // Arrange
+            linked_list list = new linked_list();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+
+            LinkedListRotator rotator = new LinkedListRotator(list);
+            string expected = "3 -> 4 -> 5 -> 1 -> 2 -> Null";
+
+            // Act
+            rotator.RotateLeft(7); // Rotate by k = 7 (list length is 5, so it rotates by 2)
+            string actual = list.PrintList();
+
+            // Assert
+            Assert.Equal(expected, actual); // The expected rotation matches
+        }
 
     }
 }
