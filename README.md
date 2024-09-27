@@ -21,8 +21,8 @@
 ## cc7
 [Reverse-Words](challenges-and-data-structures-code/Reverse%20Words/Reverse%20Words/Revers_word.md)
 
-## cc8 && cc9 && cc10 && cc17
-[Linked List Implementation && Remove_Duplicates && Merge Sorted && Linked List Rotator](challenges-and-data-structures-code/Data%20Structures/LinkedList/Readme.md)
+## cc8 && cc9 && cc10 && cc17 && cc18
+[Linked List Implementation && Remove_Duplicates && Merge Sorted && Linked List Rotator && Print Right View](challenges-and-data-structures-code/Data%20Structures/LinkedList/Readme.md)
 
 ## cc11 
 [stack and queue && reverse && delete middle && get minimum ](challenges-and-data-structures-code/Data%20Structures/Stack&Queue/stackAndQueue.md)

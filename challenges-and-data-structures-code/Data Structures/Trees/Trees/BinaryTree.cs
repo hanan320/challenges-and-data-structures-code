@@ -70,5 +70,45 @@ namespace Trees
             Console.WriteLine(new string(' ', level * 4) + node.Data);
             Print(node.Left, level + 1);
         }
+        public void PrintRightView()
+        {
+            if (Root == null)
+            {
+                Console.WriteLine("The tree is empty.");
+                return;
+            }
+
+           
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(Root);
+
+            while (queue.Count > 0)
+            {
+                int levelSize = queue.Count;
+
+                // Iterate over each level
+                for (int i = 0; i < levelSize; i++)
+                {
+                    Node currentNode = queue.Dequeue();
+
+                    // Only print the rightmost node (i == levelSize - 1)
+                    if (i == levelSize - 1)
+                    {
+                        Console.Write(currentNode.Data + " ");
+                    }
+
+                    // Enqueue left child first, then right child
+                    if (currentNode.Left != null)
+                    {
+                        queue.Enqueue(currentNode.Left);
+                    }
+                    if (currentNode.Right != null)
+                    {
+                        queue.Enqueue(currentNode.Right);
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
     }
 }
