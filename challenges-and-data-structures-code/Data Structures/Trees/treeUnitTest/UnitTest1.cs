@@ -327,5 +327,51 @@ namespace treeUnitTest
             Assert.Equal(expectedValues, largestValues);
             Assert.Equal(expectedValues.Sum(), largestValues.Sum());  // Verify the sum is correct
         }
+
+        [Fact]
+        public void PrintRightView_ShouldPrintCorrectRightView()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+            tree.Root = new Node(2);
+            tree.Root.Left = new Node(3);
+            tree.Root.Right = new Node(5);
+            tree.Root.Left.Left = new Node(4);
+            tree.Root.Right.Right = new Node(6);
+            tree.Root.Left.Left.Right = new Node(7);
+
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                // Act
+                tree.PrintRightView();
+
+                // Assert
+                var result = sw.ToString().Trim();
+                Assert.Equal("2 5 6 7", result);
+            }
+        }
+        [Fact]
+        public void PrintRightView_ShouldHandleRightSidedTree()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+            tree.Root = new Node(1);
+            tree.Root.Right = new Node(2);
+            tree.Root.Right.Right = new Node(3);
+
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                // Act
+                tree.PrintRightView();
+
+                // Assert
+                var result = sw.ToString().Trim();
+                Assert.Equal("1 2 3", result);
+            }
+        }
     }
 }
