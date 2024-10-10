@@ -172,15 +172,38 @@
             //Btree2.Print();
             //int maxLevel2 = Btree2.FindMaxLevelNodes(); // Using the extension method
             //Console.WriteLine("Level with maximum nodes : " + maxLevel2);  
+            //BinaryTree Btree = new BinaryTree();
+            //Btree.Root = new Node(1);
+            //Btree.Root.Left = new Node(2);
+            //Btree.Root.Right = new Node(3);
+            //Btree.Root.Left.Left = new Node(4);
+            //Btree.Root.Left.Right = new Node(5);
+            //Btree.Print();
+            //int minDepth = Btree.FindMinimumDepth();
+            //Console.WriteLine("Minimum Depth: " + minDepth);  // Output: 2
             BinaryTree Btree = new BinaryTree();
-            Btree.Root = new Node(1);
-            Btree.Root.Left = new Node(2);
-            Btree.Root.Right = new Node(3);
-            Btree.Root.Left.Left = new Node(4);
-            Btree.Root.Left.Right = new Node(5);
-            Btree.Print();
-            int minDepth = Btree.FindMinimumDepth();
-            Console.WriteLine("Minimum Depth: " + minDepth);  // Output: 2
+            Btree.Root = new Node(40);
+            Btree.Root.Left = new Node(10);
+            Btree.Root.Right = new Node(50);
+            Btree.Root.Left.Left = new Node(5);
+            Btree.Root.Left.Right = new Node(30);
+            Btree.Root.Right.Right = new Node(60);
+            Btree.Root.Left.Right.Left = new Node(20);
+            Btree.Root.Left.Right.Right = new Node(35);
+
+            // Print original Binary Tree
+            Console.WriteLine("Binary Tree (Before Conversion):");
+            Btree.Print(); // Structured print
+            Console.WriteLine();
+
+            // Convert to BST
+            BinaryTreeToBSTConverter converter = new BinaryTreeToBSTConverter();
+            converter.ConvertToBST(Btree);
+
+            // Print Binary Search Tree after conversion
+            Console.WriteLine("Binary Search Tree (After Conversion):");
+            Btree.Print(); // Structured print
+            Console.WriteLine();
 
         }
     }
