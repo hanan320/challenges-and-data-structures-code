@@ -142,36 +142,45 @@
             //Console.WriteLine("Right View of the Binary Tree:");
             //Btree.PrintRightView();  // Output: 2 5 6 7
 
-            Console.WriteLine("Example 1:");
-            BinaryTree Btree1 = new BinaryTree();
-            Btree1.Root = new Node(1);
-            Btree1.Root.Left = new Node(2);
-            Btree1.Root.Right = new Node(3);
-            Btree1.Root.Left.Left = new Node(4);
-            Btree1.Root.Left.Right = new Node(5);
-            Btree1.Root.Right.Right = new Node(6);
-            Btree1.Root.Left.Left.Left = new Node(7);
-            Btree1.Print();
-            int maxLevel1 = Btree1.FindMaxLevelNodes(); // Using the extension method
-            Console.WriteLine("Level with maximum nodes : " + maxLevel1);  // Output: 2
+            //Console.WriteLine("Example 1:");
+            //BinaryTree Btree1 = new BinaryTree();
+            //Btree1.Root = new Node(1);
+            //Btree1.Root.Left = new Node(2);
+            //Btree1.Root.Right = new Node(3);
+            //Btree1.Root.Left.Left = new Node(4);
+            //Btree1.Root.Left.Right = new Node(5);
+            //Btree1.Root.Right.Right = new Node(6);
+            //Btree1.Root.Left.Left.Left = new Node(7);
+            //Btree1.Print();
+            //int maxLevel1 = Btree1.FindMaxLevelNodes(); // Using the extension method
+            //Console.WriteLine("Level with maximum nodes : " + maxLevel1);  // Output: 2
 
-            Console.WriteLine("\n//////////////////////////////");
-            // Example 2
-            Console.WriteLine("Example 2:");
-            BinaryTree Btree2 = new BinaryTree();
-            Btree2.Root = new Node(1);
-            Btree2.Root.Left = new Node(2);
-            Btree2.Root.Right = new Node(3);
-            Btree2.Root.Left.Left = new Node(4);
-            Btree2.Root.Left.Right = new Node(5);
-            Btree2.Root.Right.Right = new Node(7);
-            Btree2.Root.Left.Left.Left = new Node(8);
-            Btree2.Root.Left.Right.Left = new Node(9);
-            Btree2.Root.Right.Right.Left = new Node(10);
+            //Console.WriteLine("\n//////////////////////////////");
+            //// Example 2
+            //Console.WriteLine("Example 2:");
+            //BinaryTree Btree2 = new BinaryTree();
+            //Btree2.Root = new Node(1);
+            //Btree2.Root.Left = new Node(2);
+            //Btree2.Root.Right = new Node(3);
+            //Btree2.Root.Left.Left = new Node(4);
+            //Btree2.Root.Left.Right = new Node(5);
+            //Btree2.Root.Right.Right = new Node(7);
+            //Btree2.Root.Left.Left.Left = new Node(8);
+            //Btree2.Root.Left.Right.Left = new Node(9);
+            //Btree2.Root.Right.Right.Left = new Node(10);
 
-            Btree2.Print();
-            int maxLevel2 = Btree2.FindMaxLevelNodes(); // Using the extension method
-            Console.WriteLine("Level with maximum nodes : " + maxLevel2);  
+            //Btree2.Print();
+            //int maxLevel2 = Btree2.FindMaxLevelNodes(); // Using the extension method
+            //Console.WriteLine("Level with maximum nodes : " + maxLevel2);  
+            BinaryTree Btree = new BinaryTree();
+            Btree.Root = new Node(1);
+            Btree.Root.Left = new Node(2);
+            Btree.Root.Right = new Node(3);
+            Btree.Root.Left.Left = new Node(4);
+            Btree.Root.Left.Right = new Node(5);
+            Btree.Print();
+            int minDepth = Btree.FindMinimumDepth();
+            Console.WriteLine("Minimum Depth: " + minDepth);  // Output: 2
 
         }
     }
