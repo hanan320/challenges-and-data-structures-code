@@ -20,3 +20,6 @@
 
 ### Challenge 19: Level with Maximum Number of Nodes
 ![trees](./w.png)
+
+### Challenge 20: Find Minimum Depth
+![trees](./x.png)
