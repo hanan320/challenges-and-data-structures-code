@@ -23,3 +23,6 @@
 
 ### Challenge 20: Find Minimum Depth
 ![trees](./x.png)
+
+### Challenge 21: Binary Tree to Binary Search Tree
+![trees](./x.png)
